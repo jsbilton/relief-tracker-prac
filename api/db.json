@@ -1,5 +1,5 @@
 {
-  "persons": [],
+  "persons": [{"firstName": "Bob", "lastName": "Marley"},{"firstName": "Jerry", "lastName": "Garcia"}, {"firstName": "Jim", "lastName": "Morrison"}, {"firstName": "Michael", "lastName": "McDonald"}, {"firstName": "Bob", "lastName": "Dylan"}],
   "efforts": [],
   "locations": []
 }
