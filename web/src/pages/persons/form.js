@@ -14,27 +14,56 @@ const PersonForm = React.createClass({
       success: false
     }
   },
+  componentDidMount() {
+    if (this.props.params.id) {
+      xhr.get('http://localhost:4000/persons', + this.props.params.id, {
+        json: true
+      }, (err, res, person) => {
+        if (err) return console.log(err.message)
+        this.setState({ person })
+      })
+    }
+  },
   handleChange(field) {
     return e => {
       const newState = {}
       newState[field] = e.target.value
-      this.setState({ newState })
+      this.setState(newState)
     }
   },
   handleSubmit(e) {
     e.preventDefault()
-    xhr.post('http://localhost:4000/persons', {
-      json: this.state
-    }, (err, res, body) => {
-        if (err) return console.log(err.message)
-        this.setState({ success: true })
-    })
+    if (this.state.id) {
+      xhr.put('http://localhost:4000/persons' + this.state.id, {
+        json: this.state
+      }, (err, res, body) => {
+          if (err) return console.log(err.message)
+          this.setState({ success: true })
+      })
+    } else {
+      xhr.post('http://localhost:4000/persons', {
+        json: this.state
+      }, (err, res, body) => {
+          if (err) return console.log(err.message)
+          this.setState({ success: true })
+      })
+    }
   },
   render() {
+    const formState = this.state.id ? 'Edit' : 'New'
     return (
       <div>
-    
-        { this.state.success ? <Redirect to="/persons" /> : null }
+
+        { this.state.success && this.state.id ?
+          <Redirect to={`/persons/${this.state.id}/show`} />
+          : null
+        }
+
+        { this.state.success && !this.state.id ?
+          <Redirect to={`/persons/`} />
+          : null
+        }
+
         <h3>
           New Person Form
         </h3>

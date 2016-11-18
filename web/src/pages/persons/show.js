@@ -23,6 +23,7 @@ const Person = React.createClass({
           <h1>
             {this.state.person.firstName + ' ' + this.state.person.lastName}
           </h1>
+          <Link to={`/persons/${this.state.person.id}/edit`}>Edit</Link>
           <Link to="/persons">Return</Link>
       </div>
     )
