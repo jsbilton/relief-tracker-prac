@@ -10,10 +10,7 @@ const xhr = require('xhr')
 const Persons = React.createClass({
   getInitialState: function () {
     return {
-      persons: [{
-        firstName: 'Bob',
-        lastName: 'Marley'
-      }]
+      persons: []
     }
   },
   componentDidMount() {
@@ -27,7 +24,11 @@ const Persons = React.createClass({
   },
   render () {
     const listPerson = person =>
-      <li>{ person.firstName + ' ' + person.lastName }</li>
+    // ES6 tag template below is same as "/persons" + person.id + "/show"
+      <li key={person.id}>
+      <Link to={`/persons/${person.id}/show`}>
+      {person.firstName + ' ' + person.lastName}
+      </Link></li>
 
     return (
       <div>

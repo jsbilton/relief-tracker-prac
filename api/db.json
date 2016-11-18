@@ -1,5 +1,29 @@
 {
-  "persons": [{"firstName": "Bob", "lastName": "Marley"},{"firstName": "Jerry", "lastName": "Garcia"}, {"firstName": "Jim", "lastName": "Morrison"}, {"firstName": "Michael", "lastName": "McDonald"}, {"firstName": "Bob", "lastName": "Dylan"}],
+  "persons": [
+    {
+      "id": 1,
+      "firstName": "Bob",
+      "lastName": "Marley"
+    },
+    {
+      "id": 2,
+      "firstName": "Jerry",
+      "lastName": "Garcia"
+    },
+    {
+      "id": 3,
+      "firstName": "Jim",
+      "lastName": "Morrison"
+    },
+    {
+      "id": 4,
+      "firstName": "Michael",
+      "lastName": "McDonald"
+    },
+    {
+      "id": 5,
+      "firstName": "Bob", "lastName": "Dylan"}
+  ],
   "efforts": [],
   "locations": []
 }
