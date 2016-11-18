@@ -14,10 +14,7 @@ const Persons = React.createClass({
     }
   },
   componentDidMount() {
-    xhr.get('http://localhost:4000/persons', {
-        json: true
-        // could do body but it is going to return persons so..
-    }, (err, response, persons) => {
+    this.props.allDocs((err, persons) => {
       if (err) return console.log(err.message)
       this.setState({ persons })
     })
