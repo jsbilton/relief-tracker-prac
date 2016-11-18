@@ -22,7 +22,9 @@
     },
     {
       "id": 5,
-      "firstName": "Bob", "lastName": "Dylan"}
+      "firstName": "Bob",
+      "lastName": "Dylan"
+    }
   ],
   "efforts": [],
   "locations": []

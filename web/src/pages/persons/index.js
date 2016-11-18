@@ -36,10 +36,9 @@ const Persons = React.createClass({
               Persons List
           </h1>
           <Link to="/persons/new">New Person</Link>
-          
           <ul>
               <li>
-                { this.state.persons.map(listPerson) }
+                  { this.state.persons.map(listPerson) }
               </li>
           </ul>
           <Link to="/">Home</Link>

@@ -1,12 +1,13 @@
 //   show person
 const React = require('react')
 const xhr = require('xhr')
-const { Link } = require('react-router')
+const { Link, Redirect } = require('react-router')
 
 const Person = React.createClass({
   getInitialState () {
     return {
-       person: []
+       person: {},
+       removed: false
     }
   },
   componentDidMount() {
@@ -17,14 +18,30 @@ const Person = React.createClass({
       this.setState({ person })
     })
   },
+  handleRemove(e) {
+    e.preventDefault()
+    if(confirm("Are you sure?") ) {
+      xhr.del('http://localhost:4000/persons/' + this.state.person.id, {
+        json: this.state.person
+      }, (err, res, body) => {
+        if (err) return console.log(err.message)
+        this.setState({ removed: true })
+      })
+    }
+  },
   render () {
     return (
       <div>
+        {this.state.removed ? <Redirect to="/persons" /> : null }
           <h1>
             {this.state.person.firstName + ' ' + this.state.person.lastName}
           </h1>
-          <Link to={`/persons/${this.state.person.id}/edit`}>Edit</Link>
+          <Link to={`/persons/${this.state.person.id}/edit`}>Edit Person</Link>
           <Link to="/persons">Return</Link>
+          <button
+            onClick={this.handleRemove}>
+            Remove Person
+          </button>
       </div>
     )
   }
