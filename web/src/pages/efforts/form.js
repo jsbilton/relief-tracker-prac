@@ -24,19 +24,39 @@ const EffortForm = React.createClass ({
   },
   handleSubmit(e) {
     e.preventDefault()
-    xhr.post('http://localhost:4000/efforts',
-    { json: this.state},
-    (e, r, b) => {
-      if (e) return console.log(e.message)
-      this.setState({ success: true })
-    })
+    if (this.state.id) {
+      xhr.put('http://localhost:4000/efforts/' + this.state.id, { json: this.state}, (e, r, b) => {
+        if (e) return console.log(e.message)
+        this.setState({ success: true })
+      })
+    } else {
+      xhr.post('http://localhost:4000/efforts', { json: this.state }, (e, r, b) => {
+        if (e) return console.log(e.message)
+        this.setState({ success: true })
+      })
+    }
+  },
+  componentDidMount() {
+    if (this.props.params.id) {
+      xhr.get('http://localhost:4000/efforts/' + this.props.params.id, { json: true}, (e, r, effort) => {
+        if (e) return console.log(e.message)
+        this.setState(effort)
+      })
+    }
   },
   render() {
+    const formState = this.state.id ? 'Edit' : 'New'
     return (
       <div>
-        { this.state.success ? <Redirect to="/efforts" /> : null }
-          <h1>New Effort Form</h1>
-          <form onSubmit={this.handleSubmit}>
+          { this.state.success && this.state.id
+            ? <Redirect to={`efforts/${this.state.id}/show`} />
+        : null }
+          { this.state.success && !this.state.id
+            ? <Redirect to={`/efforts/`} />
+        : null }
+          <h3>{formState} Form</h3>
+          <form
+            onSubmit={this.handleSubmit}>
             <div>
               <label style={labelStyle}>Name</label>
               <input
@@ -60,7 +80,7 @@ const EffortForm = React.createClass ({
             </div>
             <div>
               <button>Save</button>
-              <Link to="/effort">Cancel</Link>
+              <Link to="/efforts">Cancel</Link>
             </div>
           </form>
       </div>

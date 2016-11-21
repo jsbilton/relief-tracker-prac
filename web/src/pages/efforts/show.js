@@ -12,7 +12,7 @@ const Effort = React.createClass({
     }
   },
   componentDidMount() {
-    xhr.get("http:/localhost:4000/efforts/" + this.props.params.id,
+    xhr.get("http://localhost:4000/efforts/" + this.props.params.id,
       { json: true }, (e, r, effort) => {
         if (e) return console.log(e.message)
         this.setState({ effort })
@@ -23,6 +23,7 @@ const Effort = React.createClass({
     return (
       <div>
           <h3>{this.state.effort.name}</h3>
+          <Link to={`/efforts/${this.state.effort.id}/edit`}>Edit Effort</Link>
           <Link to="/efforts">Return</Link>
       </div>
     )

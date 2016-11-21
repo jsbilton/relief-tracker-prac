@@ -3,6 +3,7 @@ const { BrowserRouter, Match, Miss, Link } = require('react-router')
 
 const Home = require('./pages/home')
 const About = require('./pages/about')
+
 const Persons = require('./pages/persons/')
 const Person = require('./pages/persons/show')
 const PersonForm = require('./pages/persons/form')
@@ -36,6 +37,8 @@ const App = React.createClass({
               <Match exactly pattern="/efforts" component={ Efforts } />
               <Match pattern="/efforts/:id/show" component={ Effort } />
               <Match exactly pattern="/efforts/new" component={ EffortForm } />
+              <Match pattern="/efforts/:id/edit" component={ EffortForm} />
+
               <Miss component={ NoMatch } />
           </div>
       </BrowserRouter>

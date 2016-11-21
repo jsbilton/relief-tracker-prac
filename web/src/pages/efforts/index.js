@@ -21,16 +21,16 @@ const Efforts = React.createClass({
   },
   render() {
     const listEffort = effort =>
-      <li key>{effort.id}>
+      <li key={effort.id}>
         <Link to={`/efforts/${effort.id}/show`}>
-          {effort.name}
+        {effort.name}
         </Link>
       </li>
 
     return (
       <div>
-      <h1>Efforts</h1>
-      <Link to='/efforts/new'>New Effort</Link>
+         <h1>Efforts</h1>
+         <Link to="/efforts/new">New Effort</Link>
          <ul>
            {this.state.efforts.map(listEffort)}
          </ul>
