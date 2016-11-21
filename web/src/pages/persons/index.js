@@ -5,7 +5,6 @@
 
 const React = require('react')
 const { Link } = require('react-router')
-const xhr = require('xhr')
 
 const Persons = React.createClass({
   getInitialState: function () {
@@ -23,9 +22,10 @@ const Persons = React.createClass({
     const listPerson = person =>
     // ES6 tag template below is same as "/persons" + person.id + "/show"
       <li key={person.id}>
-      <Link to={`/persons/${person.id}/show`}>
-      {person.firstName + ' ' + person.lastName}
-      </Link></li>
+        <Link to={`/persons/${person.id}/show`}>
+        {person.firstName + ' ' + person.lastName}
+        </Link>
+      </li>
 
     return (
       <div>
@@ -34,9 +34,7 @@ const Persons = React.createClass({
           </h1>
           <Link to="/persons/new">New Person</Link>
           <ul>
-              <li>
-                  { this.state.persons.map(listPerson) }
-              </li>
+              { this.state.persons.map(listPerson) }
           </ul>
           <Link to="/">Home</Link>
       </div>

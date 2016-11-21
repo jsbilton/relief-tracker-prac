@@ -23,12 +23,43 @@
     {
       "firstName": "Jim ",
       "lastName": "James",
-      "email": "Jim@ever.com",
+      "email": "yimyames@onebigholiday.com",
       "phone": "(898) 667-0909",
       "success": false,
-      "id": 7
+      "id": "7"
+    },
+    {
+      "firstName": "Ozzy ",
+      "lastName": "Osbourne",
+      "email": "ozzy@night.net",
+      "phone": "(990) 678-1928",
+      "success": false,
+      "id": 8
     }
   ],
-  "efforts": [],
-  "locations": []
+  "efforts": [
+    {
+      "phase": {
+        "phase": "completed"
+      },
+      "id": "1",
+      "name": "Hurricane Andrew",
+      "organizationID": "Sandlappers LLC"
+    },
+    {
+      "phase": {
+        "phase": "in-progress"
+      },
+      "id": "2",
+      "name": "Hurricane Matthews",
+      "organizationID": "Sandlappers LLC"
+    }
+  ],
+  "locations": [
+    {
+      "name": "",
+      "lat": "",
+      "long": ""
+    }
+  ]
 }

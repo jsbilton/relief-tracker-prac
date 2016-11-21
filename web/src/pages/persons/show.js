@@ -1,6 +1,8 @@
-//   show person
+///////////////////////////////////////////////////
+///////////////    show person    ////////////////
+//////////////////////////////////////////////////
 const React = require('react')
-const xhr = require('xhr')
+// const xhr = require('xhr')
 const { Link, Redirect } = require('react-router')
 
 const Person = React.createClass({
@@ -15,19 +17,11 @@ const Person = React.createClass({
       if (err) return console.log(err.message)
       this.setState({ person })
     })
-    // xhr.get('http://localhost:4000/persons/' + this.props.params.id, {
-    //   json: true
-    // }, (err, response, person) => {
-    //   if (err) return console.log(err.message)
-    //   this.setState({ person })
-    // })
   },
   handleRemove(e) {
     e.preventDefault()
-    if(confirm("Are you sure?") ) {
-      xhr.del('http://localhost:4000/persons/' + this.state.person.id, {
-        json: this.state.person
-      }, (err, res, body) => {
+    if (confirm("Are you sure?") ) {
+      this.props.remove(this.props.params.id, this.state.person, (err, body) => {
         if (err) return console.log(err.message)
         this.setState({ removed: true })
       })
@@ -37,15 +31,19 @@ const Person = React.createClass({
     return (
       <div>
         {this.state.removed ? <Redirect to="/persons" /> : null }
-          <h1>
+          <h3>
             {this.state.person.firstName + ' ' + this.state.person.lastName}
-          </h1>
-          <Link to={`/persons/${this.state.person.id}/edit`}>Edit Person</Link>
-          <Link to="/persons">Return</Link>
-          <button
+          </h3>
+          <p>{this.state.person.email}</p>
+          <p>{this.state.person.phone}</p>
+          <Link to={`/persons/${this.state.person.id}/edit`}>Edit</Link>
+          |
+          <a href='#'
             onClick={this.handleRemove}>
-            Remove Person
-          </button>
+            Remove
+          </a>
+          |
+          <Link to="/persons">Return</Link>
       </div>
     )
   }

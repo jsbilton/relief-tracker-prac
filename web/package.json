@@ -1,7 +1,7 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "description": "",
+  "description": "relief-tracker",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start"

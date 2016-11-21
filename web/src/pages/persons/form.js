@@ -1,3 +1,7 @@
+////////////////////////////////////////////////////////////
+///////////////    Persons Input Forms   //////////////////
+//////////////////////////////////////////////////////////
+
 const React = require('react')
 const labelStyle = { display: 'block' }
 // { this is destructuring-- look into this bag and grab this }
@@ -16,11 +20,12 @@ const PersonForm = React.createClass({
   },
   componentDidMount() {
     if (this.props.params.id) {
-      xhr.get('http://localhost:4000/persons', + this.props.params.id, {
+      xhr.get('http://localhost:4000/persons/' + this.props.params.id, {
         json: true
       }, (err, res, person) => {
+        // console.log('good',person)
         if (err) return console.log(err.message)
-        this.setState({ person })
+        this.setState(person)
       })
     }
   },
@@ -34,7 +39,7 @@ const PersonForm = React.createClass({
   handleSubmit(e) {
     e.preventDefault()
     if (this.state.id) {
-      xhr.put('http://localhost:4000/persons' + this.state.id, {
+      xhr.put('http://localhost:4000/persons/' + this.state.id, {
         json: this.state
       }, (err, res, body) => {
           if (err) return console.log(err.message)
@@ -50,23 +55,21 @@ const PersonForm = React.createClass({
     }
   },
   render() {
+    console.log(this.state)
     const formState = this.state.id ? 'Edit' : 'New'
     return (
       <div>
-
         { this.state.success && this.state.id ?
           <Redirect to={`/persons/${this.state.id}/show`} />
           : null
         }
-
         { this.state.success && !this.state.id ?
-          <Redirect to={`/persons/`} />
+          <Redirect to={`/persons`} />
           : null
         }
-
-        <h3>
-          New Person Form
-        </h3>
+        <h1>
+          {formState} Person Form
+        </h1>
         <form onSubmit={this.handleSubmit}>
           <div>
             <label style={labelStyle}>First Name</label>
@@ -75,7 +78,6 @@ const PersonForm = React.createClass({
                 value={this.state.firstName}
                 type="text"/>
           </div>
-
           <div>
             <label style={labelStyle}>Last Name</label>
               <input
@@ -95,7 +97,7 @@ const PersonForm = React.createClass({
               <input
                 onChange={this.handleChange('phone')}
                 value={this.state.phone}
-                type="phone"/>
+                type="text"/>
           </div>
           <div>
             <button>Save</button>

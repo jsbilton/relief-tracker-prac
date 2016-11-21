@@ -15,7 +15,7 @@ const Service = Component => React.createClass({
     })
   },
   post (doc, callback) {
-    xhr.post(`${API_URL}/persons/`, {json: doc}, (err, res, body) => {
+    xhr.post(`${API_URL}/persons`, {json: doc}, (err, res, body) => {
       callback(err, body)
     })
   },
