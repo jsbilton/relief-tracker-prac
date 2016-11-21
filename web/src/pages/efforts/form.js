@@ -12,6 +12,9 @@ const EffortForm = React.createClass ({
       name: '',
       phase: '',
       organizationID: '',
+      desc: '',
+      start: '',
+      end: '',
       success: false
     }
   },
@@ -76,6 +79,27 @@ const EffortForm = React.createClass ({
               <input
                 onChange={this.handleChange('organizationID')}
                 value={this.state.organizationID}
+                type='text'/>
+            </div>
+            <div>
+              <label style={labelStyle}>Desc</label>
+              <input
+                onChange={this.handleChange('desc')}
+                value={this.state.desc}
+                type='text'/>
+            </div>
+            <div>
+              <label style={labelStyle}>Start</label>
+              <input
+                onChange={this.handleChange('start')}
+                value={this.state.start}
+                type='text'/>
+            </div>
+            <div>
+              <label style={labelStyle}>End</label>
+              <input
+                onChange={this.handleChange('end')}
+                value={this.state.end}
                 type='text'/>
             </div>
             <div>

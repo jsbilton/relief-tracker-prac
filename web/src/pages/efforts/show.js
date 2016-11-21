@@ -36,6 +36,10 @@ const Effort = React.createClass({
       <div>
         { this.state.removed ? <Redirect to="/efforts" /> : null}
           <h3>{this.state.effort.name}</h3>
+            <p>{this.state.effort.desc}</p>
+            <p>{this.state.effort.phase}</p>
+            <p>{this.state.effort.start}</p>
+            <p>{this.state.effort.end}</p>
           <Link to={`/efforts/${this.state.effort.id}/edit`}>Edit Effort</Link>
           |
           <a href='#'
