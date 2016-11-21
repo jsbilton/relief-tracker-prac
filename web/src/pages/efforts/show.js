@@ -15,21 +15,17 @@ const Effort = React.createClass({
   handleRemove(e) {
     e.preventDefault()
     if (confirm('Do you really want to Remove me?') ) {
-      xhr.del('http://localhost:4000/efforts/' + this.state.effort.id, {
-        json: this.state.effort
-      }, (e, r, b) => {
+      this.props.remove(this.props.params.id, this.state.effort, (e, b) => {
         if (e) return console.log(e.message)
         this.setState({ removed: true })
       })
     }
   },
   componentDidMount() {
-    xhr.get("http://localhost:4000/efforts/" + this.props.params.id,
-      { json: true }, (e, r, effort) => {
-        if (e) return console.log(e.message)
-        this.setState({ effort })
-      }
-    )
+    this.props.get(this.props.params.id, (e, effort) => {
+      if (e) return console.log(e.message)
+      this.setState({ effort })
+    })
   },
   render() {
     return (

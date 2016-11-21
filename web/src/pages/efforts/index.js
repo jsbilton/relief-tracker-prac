@@ -12,9 +12,7 @@ const Efforts = React.createClass({
     }
   },
   componentDidMount() {
-    xhr.get('http://localhost:4000/efforts', {
-      json: true
-    }, (e, r, efforts) => {
+    this.props.allDocs((e, efforts) => {
       if (e) return console.log(e.message)
       this.setState({ efforts })
     })
