@@ -47,22 +47,6 @@
   ],
   "efforts": [
     {
-      "phase": {
-        "phase": "completed"
-      },
-      "id": "1",
-      "name": "Hurricane Andrew",
-      "organizationID": "Sandlappers LLC"
-    },
-    {
-      "phase": {
-        "phase": "in-progress"
-      },
-      "id": "2",
-      "name": "Hurricane Matthews",
-      "organizationID": "Sandlappers LLC"
-    },
-    {
       "name": "Bonnaroo ",
       "phase": "in-progress",
       "organizationID": "Liberty Media",
@@ -84,13 +68,6 @@
       "id": "HyzCaqxzg"
     },
     {
-      "name": "Frothy Beard",
-      "phase": "in-progress",
-      "organizationID": "Holy City ",
-      "success": false,
-      "id": "B1EskilGx"
-    },
-    {
       "name": "Interlockin",
       "phase": "completed",
       "organizationID": "Dead Media",
@@ -98,11 +75,11 @@
       "id": "SJyzUjlfg"
     },
     {
-      "name": "James Brown Award",
-      "phase": "started",
-      "organizationID": "North Augusta All-Stars",
+      "name": "Southern Ground",
+      "phase": "in-process",
+      "organizationID": "Zack Brown Band Inc",
       "success": false,
-      "id": "SyjZXnlMg"
+      "id": "SyWov2lfl"
     }
   ],
   "locations": [
