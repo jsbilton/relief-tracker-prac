@@ -34,7 +34,7 @@ const App = React.createClass({
               <Match pattern="/persons/:id/edit" component={ PersonForm } />
 
               <Match exactly pattern="/efforts" component={ Efforts } />
-              <Match exactly pattern="/efforts/:id/show" component={ Effort } />
+              <Match pattern="/efforts/:id/show" component={ Effort } />
               <Match exactly pattern="/efforts/new" component={ EffortForm } />
               <Miss component={ NoMatch } />
           </div>

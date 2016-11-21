@@ -60,7 +60,7 @@ const EffortForm = React.createClass ({
             </div>
             <div>
               <button>Save</button>
-              <Link to="/efforts">Cancel</Link>
+              <Link to="/effort">Cancel</Link>
             </div>
           </form>
       </div>
