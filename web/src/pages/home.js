@@ -6,7 +6,7 @@ const Home = React.createClass({
     return (
       <div>
           <h1>
-              Welcome Home
+              Welcome To Relief Tracker
           </h1>
           <h3>Main Menu</h3>
           <ul>

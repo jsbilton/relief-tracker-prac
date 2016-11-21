@@ -15,6 +15,9 @@ const Effort = require('./pages/efforts/show')
 const EffortForm = require('./pages/efforts/form')
 const ServiceEfforts = require('./components/serviceEfforts')
 
+const Locations = require('./pages/locations/')
+const Location = require('./pages/locations/show')
+
 const NoMatch = () => (
   <div>
       <h3>Page Not Found</h3>
@@ -39,6 +42,11 @@ const App = React.createClass({
               <Match pattern="/efforts/:id/show" component={ ServiceEfforts(Effort) } />
               <Match exactly pattern="/efforts/new" component={ EffortForm } />
               <Match pattern="/efforts/:id/edit" component={ EffortForm} />
+
+              <Match exactly pattern="/locations"
+                component={ Locations } />
+              <Match pattern="/locations/:id/show"
+                component={ Location } />
 
               <Miss component={ NoMatch } />
           </div>
