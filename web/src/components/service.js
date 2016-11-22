@@ -3,30 +3,30 @@ const xhr = require('xhr')
 const API_URL = process.env.REACT_APP_API
 const url = API_URL
 
-const Service = Component => React.createClass({
+const Service = (Component, model) => React.createClass({
   allDocs (callback) {
-    xhr.get(url + '/persons', {json: true}, (err, res, body) => {
+    xhr.get(`url/${model}`, {json: true}, (err, res, body) => {
       callback(err, body)
     })
   },
   get (id, callback) {
-    // url + '/persons/' + id,
-    xhr.get(`${url}/persons/${id}`, {json: true}, (err, res, body) => {
+    // url + '/model/' + id,
+    xhr.get(`${url}/${model}/${id}`, {json: true}, (err, res, body) => {
       callback(err, body)
     })
   },
   post (doc, callback) {
-    xhr.post(`${url}/persons`, {json: doc}, (err, res, body) => {
+    xhr.post(`${url}/${model}`, {json: doc}, (err, res, body) => {
       callback(err, body)
     })
   },
   put (id, doc, callback) {
-    xhr.put(`${url}/persons/${id}`, {json: doc}, (err, res, body) => {
+    xhr.put(`${url}/${model}/${id}`, {json: doc}, (err, res, body) => {
       callback(err, body)
     })
   },
   remove (id, body, callback) {
-    xhr.del(`${url}/persons/${id}`, {json: body}, (err, res, body) => {
+    xhr.del(`${url}/${model}/${id}`, {json: body}, (err, res, body) => {
       callback(err, body)
     })
   },

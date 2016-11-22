@@ -4,6 +4,9 @@
 const React = require('react')
 //const xhr = require('xhr')
 const { Link, Redirect } = require('react-router')
+const Service = require('../../components/service')
+const LocationShowBase = require('./location-show')
+const LocationShow = Service(LocationShowBase, 'locations')
 
 const Effort = React.createClass({
   getInitialState() {
@@ -28,14 +31,14 @@ const Effort = React.createClass({
     })
   },
   render() {
+    const effort = this.state.effort || {}
     return (
       <div>
         { this.state.removed ? <Redirect to="/efforts" /> : null}
-          <h3>{this.state.effort.name}</h3>
-            <p>{this.state.effort.desc}</p>
-            <p>{this.state.effort.phase}</p>
-            <p>{this.state.effort.start}</p>
-            <p>{this.state.effort.end}</p>
+          <h3>{effort.name}</h3>
+            <p>{effort.desc}</p>
+            {effort.location_id ? <LocationShow id={effort.location_id} /> : null }
+
           <Link to={`/efforts/${this.state.effort.id}/edit`}>Edit Effort</Link>
           |
           <a href='#'
