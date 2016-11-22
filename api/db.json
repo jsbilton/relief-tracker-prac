@@ -35,22 +35,6 @@
       "phone": "(990) 678-1928",
       "success": false,
       "id": 8
-    },
-    {
-      "firstName": "James",
-      "lastName": "Taylor",
-      "email": "jata@fire.com",
-      "phone": "333-0902",
-      "success": false,
-      "id": 9
-    },
-    {
-      "firstName": "Brett",
-      "lastName": "Favre",
-      "email": "brett@favre.com",
-      "phone": "787-0090",
-      "success": false,
-      "id": "10"
     }
   ],
   "efforts": [
@@ -100,16 +84,6 @@
       "organizationID": "Zack Brown Band Inc",
       "success": false,
       "id": "SyWov2lfl"
-    },
-    {
-      "name": "Days of Thunder",
-      "phase": "completed",
-      "organizationID": "Cole Trickle",
-      "desc": "Racing Stuff",
-      "start": "1990-10-12",
-      "end": "1990-10-13",
-      "success": false,
-      "id": "ryfdpJbfe"
     }
   ],
   "locations": [
@@ -121,7 +95,7 @@
       "id": "1"
     },
     {
-      "name": "Los Angles",
+      "name": "Los Angeles",
       "lat": "34.0522° N",
       "long": "118.2437° W",
       "success": false,
@@ -147,13 +121,6 @@
       "long": "87.6298° W",
       "success": false,
       "id": "rkCEZ4-zg"
-    },
-    {
-      "name": "Folly Beach, SC",
-      "lat": "32.6552° N",
-      "long": "79.9404° W",
-      "success": false,
-      "id": "r1zwZ4bGl"
     }
   ]
 }
