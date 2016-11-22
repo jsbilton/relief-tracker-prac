@@ -18,6 +18,7 @@ const ServiceEfforts = require('./components/serviceEfforts')
 const Locations = require('./pages/locations/')
 const Location = require('./pages/locations/show')
 const LocationForm = require('./pages/locations/form')
+const ServiceLocations = require('./components/serviceLocation')
 
 const NoMatch = () => (
   <div>
@@ -44,8 +45,8 @@ const App = React.createClass({
               <Match exactly pattern="/efforts/new" component={ EffortForm } />
               <Match pattern="/efforts/:id/edit" component={ EffortForm} />
 
-              <Match exactly pattern="/locations" component={ Locations } />
-              <Match pattern="/locations/:id/show" component={ Location } />
+              <Match exactly pattern="/locations" component={ ServiceLocations(Locations) } />
+              <Match pattern="/locations/:id/show" component={ ServiceLocations(Location) } />
               <Match exactly pattern="/locations/new" component={ LocationForm } />
               <Match pattern="/locations/:id/edit" component={ LocationForm } />
 
