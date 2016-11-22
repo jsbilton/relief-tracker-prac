@@ -2,7 +2,7 @@
 ///////////////    SHOW EFFORT   ///////////////
 //////////////////////////////////////////////////
 const React = require('react')
-const xhr = require('xhr')
+//const xhr = require('xhr')
 const { Link, Redirect } = require('react-router')
 
 const Effort = React.createClass({

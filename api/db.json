@@ -100,13 +100,60 @@
       "organizationID": "Zack Brown Band Inc",
       "success": false,
       "id": "SyWov2lfl"
+    },
+    {
+      "name": "Days of Thunder",
+      "phase": "completed",
+      "organizationID": "Cole Trickle",
+      "desc": "Racing Stuff",
+      "start": "1990-10-12",
+      "end": "1990-10-13",
+      "success": false,
+      "id": "ryfdpJbfe"
     }
   ],
   "locations": [
     {
       "name": "San Francisco",
-      "lat": "2",
-      "long": "1"
+      "lat": "37.7749° N",
+      "long": "122.4194° W",
+      "success": false,
+      "id": "1"
+    },
+    {
+      "name": "Los Angles",
+      "lat": "34.0522° N",
+      "long": "118.2437° W",
+      "success": false,
+      "id": "HJDhxN-fg"
+    },
+    {
+      "name": "Charleston",
+      "lat": "32.7765° N",
+      "long": "79.9311° W",
+      "success": false,
+      "id": "SkF0eNZMe"
+    },
+    {
+      "name": "Portland",
+      "lat": "45.5231° N",
+      "long": "122.6765° W",
+      "success": false,
+      "id": "ry6ZZNZfx"
+    },
+    {
+      "name": "Chicago",
+      "lat": "41.8781° N",
+      "long": "87.6298° W",
+      "success": false,
+      "id": "rkCEZ4-zg"
+    },
+    {
+      "name": "Folly Beach, SC",
+      "lat": "32.6552° N",
+      "long": "79.9404° W",
+      "success": false,
+      "id": "r1zwZ4bGl"
     }
   ]
 }

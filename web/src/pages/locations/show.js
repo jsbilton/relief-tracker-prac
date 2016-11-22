@@ -20,6 +20,8 @@ const Location = React.createClass({
     return (
       <div>
         <h3>{ this.state.location.name }</h3>
+        <Link to={`/locations/${this.state.location.id}/edit`}>Edit Location</Link>
+        |
         <Link to="/locations">Return</Link>
       </div>
     )

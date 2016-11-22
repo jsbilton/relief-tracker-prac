@@ -15,13 +15,21 @@ const Locations = React.createClass({
     })
   },
   render() {
-    const listLocations = location =>
-    <li>{location.name}</li>
+    const listLocation = location =>
+      <li key={location.id}>
+          <Link to={`/locations/${location.id}/show`}>
+            { location.name + ' ' + location.lat + ' ' + location.long }
+          </Link>
+      </li>
+
     return (
       <div>
-        <h1>Locations</h1>
-        <ul>{this.state.locations.map(listLocations)}</ul>
-        <Link to="/">Home</Link>
+          <h1>Locations</h1>
+          <Link to="/locations/new">New Location</Link>
+          <ul>
+            {this.state.locations.map(listLocation)}
+          </ul>
+          <Link to="/">Home</Link>
       </div>
     )
   }
